@@ -14,7 +14,13 @@
 						http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
 	<context:component-scan base-package="br.com.caelum.tarefas" />
+	
 	<mvc:annotation-driven />
+	<mvc:interceptors>
+		<bean class="br.com.caelum.tarefas.interceptor.AutorizadorInterceptor" />
+	</mvc:interceptors>
+	
+	<mvc:default-servlet-handler />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
